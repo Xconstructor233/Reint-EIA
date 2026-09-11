@@ -1,0 +1,496 @@
+/* =========================================
+   REINT-EIA V1.0
+   ESTILOS PRINCIPALES
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --background: #08090d;
+    --surface: #101218;
+    --surface-2: #171922;
+    --border: #282c38;
+    --text: #f1f3f8;
+    --secondary-text: #9298a8;
+    --accent: #7c5cff;
+    --accent-hover: #9278ff;
+    --user-message: #252936;
+}
+
+body {
+    min-height: 100vh;
+    background: var(--background);
+    color: var(--text);
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+
+/* =========================================
+   BARRA SUPERIOR
+========================================= */
+
+.top-bar {
+    height: 65px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 18px;
+    background: rgba(8, 9, 13, 0.95);
+    border-bottom: 1px solid var(--border);
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--accent);
+    color: white;
+    font-size: 21px;
+    font-weight: bold;
+    box-shadow: 0 0 20px rgba(124, 92, 255, 0.35);
+}
+
+.brand-info {
+    display: flex;
+    align-items: baseline;
+    gap: 7px;
+}
+
+.brand-info h1 {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.brand-info span {
+    font-size: 11px;
+    color: var(--secondary-text);
+}
+
+
+/* =========================================
+   BOTONES
+========================================= */
+
+.icon-button {
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    background: transparent;
+    color: var(--text);
+    font-size: 19px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.icon-button:hover {
+    background: var(--surface-2);
+}
+
+.icon-button:active {
+    transform: scale(0.94);
+}
+
+
+/* =========================================
+   CONTENEDOR DEL CHAT
+========================================= */
+
+.chat-container {
+    flex: 1;
+    width: 100%;
+    overflow-y: auto;
+    padding: 25px 16px 150px;
+    scroll-behavior: smooth;
+}
+
+
+/* =========================================
+   PANTALLA DE BIENVENIDA
+========================================= */
+
+.welcome-screen {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 30px 10px;
+}
+
+.welcome-logo {
+    width: 78px;
+    height: 78px;
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--accent);
+    color: white;
+    font-size: 38px;
+    font-weight: bold;
+    margin-bottom: 22px;
+    box-shadow:
+        0 0 30px rgba(124, 92, 255, 0.35);
+}
+
+.welcome-screen h2 {
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.welcome-screen p {
+    color: var(--secondary-text);
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.version-text {
+    margin-top: 12px;
+    font-size: 12px !important;
+    opacity: 0.65;
+}
+
+
+/* =========================================
+   MENSAJES
+========================================= */
+
+.chat-messages {
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.message {
+    width: 100%;
+    display: flex;
+    margin-bottom: 18px;
+}
+
+.message.user {
+    justify-content: flex-end;
+}
+
+.message.ai {
+    justify-content: flex-start;
+}
+
+.message-content {
+    max-width: 85%;
+    padding: 12px 15px;
+    border-radius: 16px;
+    font-size: 15px;
+    line-height: 1.5;
+    white-space: pre-wrap;
+}
+
+.message.user .message-content {
+    background: var(--user-message);
+    border-bottom-right-radius: 5px;
+}
+
+.message.ai .message-content {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-bottom-left-radius: 5px;
+}
+
+
+/* =========================================
+   ZONA DE ESCRITURA
+========================================= */
+
+.input-area {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 12px 14px 15px;
+    background: linear-gradient(
+        to top,
+        var(--background) 75%,
+        transparent
+    );
+}
+
+.input-box {
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-end;
+    gap: 8px;
+    padding: 8px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 17px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+}
+
+#messageInput {
+    flex: 1;
+    min-height: 42px;
+    max-height: 130px;
+    resize: none;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: var(--text);
+    font-family: inherit;
+    font-size: 15px;
+    line-height: 1.45;
+    padding: 10px 8px;
+}
+
+#messageInput::placeholder {
+    color: #6f7482;
+}
+
+.send-button {
+    flex-shrink: 0;
+    width: 42px;
+    height: 42px;
+    border: none;
+    border-radius: 13px;
+    background: var(--accent);
+    color: white;
+    font-size: 19px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.send-button:hover {
+    background: var(--accent-hover);
+}
+
+.send-button:active {
+    transform: scale(0.93);
+}
+
+.disclaimer {
+    max-width: 850px;
+    margin: 7px auto 0;
+    text-align: center;
+    color: #656a78;
+    font-size: 10px;
+}
+
+
+/* =========================================
+   PANEL DE CONFIGURACIÓN
+========================================= */
+
+.settings-panel {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: min(360px, 100%);
+    height: 100vh;
+    background: var(--surface);
+    border-left: 1px solid var(--border);
+    z-index: 100;
+    transition: right 0.25s ease;
+    box-shadow: -10px 0 35px rgba(0, 0, 0, 0.35);
+}
+
+.settings-panel.open {
+    right: 0;
+}
+
+.settings-header {
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 17px;
+    border-bottom: 1px solid var(--border);
+}
+
+.settings-header h2 {
+    font-size: 18px;
+}
+
+.settings-content {
+    padding: 22px 18px;
+}
+
+.settings-content h3 {
+    font-size: 17px;
+    margin-bottom: 10px;
+}
+
+.settings-content p {
+    color: var(--secondary-text);
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+
+/* =========================================
+   SCROLLBAR
+========================================= */
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #303442;
+    border-radius: 10px;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .top-bar {
+        height: 60px;
+        padding: 0 13px;
+    }
+
+    .logo {
+        width: 36px;
+        height: 36px;
+        border-radius: 10px;
+        font-size: 19px;
+    }
+
+    .brand-info h1 {
+        font-size: 17px;
+    }
+
+    .chat-container {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .welcome-logo {
+        width: 70px;
+        height: 70px;
+        font-size: 34px;
+    }
+
+    .welcome-screen h2 {
+        font-size: 22px;
+    }
+
+    .message-content {
+        max-width: 90%;
+        font-size: 14px;
+    }
+
+    .input-area {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+}
+
+/* ================================
+   CORRECCIÓN DEL MARKDOWN
+   ================================ */
+
+.ai-message {
+    display: block !important;
+    flex-direction: column !important;
+    box-sizing: border-box;
+}
+
+.ai-message > * {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.ai-message p {
+    margin: 0 0 10px 0;
+    padding: 0;
+    line-height: 1.5;
+}
+
+.ai-message p:last-child {
+    margin-bottom: 0;
+}
+
+.ai-message h1,
+.ai-message h2,
+.ai-message h3 {
+    display: block;
+    width: 100%;
+    margin: 10px 0 6px 0;
+    padding: 0;
+}
+
+.ai-message h1 {
+    font-size: 1.5rem;
+}
+
+.ai-message h2 {
+    font-size: 1.3rem;
+}
+
+.ai-message h3 {
+    font-size: 1.15rem;
+}
+
+.ai-message ul {
+    display: block;
+    width: 100%;
+    margin: 8px 0;
+    padding-left: 22px;
+}
+
+.ai-message li {
+    margin-bottom: 5px;
+}
+
+.ai-message strong {
+    font-weight: 700;
+}
+
+.ai-message em {
+    font-style: italic;
+}
+
+.ai-message code {
+    font-family: monospace;
+}
+
+.ai-message .code-block {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: auto;
+    margin: 10px 0;
+    padding: 12px;
+}
+
+.markdown-space {
+    height: 6px;
+}

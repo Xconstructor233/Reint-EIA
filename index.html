@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#0b0b0f">
+
+    <meta name="description"
+          content="Reint-EIA — Inteligencia Artificial">
+
+    <title>Reint-EIA V1.0</title>
+
+    <!-- Hoja de estilos -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         ENCABEZADO
+    ========================== -->
+    <header class="top-bar">
+
+        <div class="brand">
+            <div class="logo">R</div>
+
+            <div class="brand-info">
+                <h1>Reint-EIA</h1>
+                <span>V1.0</span>
+            </div>
+        </div>
+
+        <button id="settingsButton"
+                class="icon-button"
+                aria-label="Configuración">
+            ⚙️
+        </button>
+
+    </header>
+
+
+    <!-- =========================
+         CONTENIDO PRINCIPAL
+    ========================== -->
+    <main class="chat-container">
+
+        <!-- Pantalla de bienvenida -->
+        <section id="welcomeScreen"
+                 class="welcome-screen">
+
+            <div class="welcome-logo">
+                R
+            </div>
+
+            <h2>Hola, soy Reint-EIA</h2>
+
+            <p>
+                Tu asistente de inteligencia artificial.
+            </p>
+
+            <p class="version-text">
+                Reint-EIA V1.0
+            </p>
+
+        </section>
+
+
+        <!-- Mensajes del chat -->
+        <section id="chatMessages"
+                 class="chat-messages"
+                 aria-live="polite">
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         ZONA DE ESCRITURA
+    ========================== -->
+    <footer class="input-area">
+
+        <div class="input-box">
+
+            <textarea
+                id="messageInput"
+                placeholder="Escribile a Reint-EIA..."
+                rows="1"
+                maxlength="4000">
+            </textarea>
+
+            <button id="sendButton"
+                    class="send-button"
+                    aria-label="Enviar mensaje">
+                ➤
+            </button>
+
+        </div>
+
+        <p class="disclaimer">
+            Reint-EIA V1.0 puede cometer errores. Verificá la información importante.
+        </p>
+
+    </footer>
+
+
+    <!-- =========================
+         CONFIGURACIÓN
+    ========================== -->
+    <aside id="settingsPanel"
+           class="settings-panel"
+           aria-hidden="true">
+
+        <div class="settings-header">
+
+            <h2>Configuración</h2>
+
+            <button id="closeSettingsButton"
+                    class="icon-button"
+                    aria-label="Cerrar">
+                ✕
+            </button>
+
+        </div>
+
+        <div class="settings-content">
+
+            <h3>Reint-EIA</h3>
+
+            <p>
+                Versión: <strong>1.0</strong>
+            </p>
+
+            <p>
+                Primera versión del proyecto Reint-EIA.
+            </p>
+
+        </div>
+
+    </aside>
+
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+    
+    <script src="ai.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
